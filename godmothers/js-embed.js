@@ -33,4 +33,30 @@
     }
   });
 });
+
+// body
+
+gsap.registerPlugin(ScrollTrigger);
+
+    gsap.to(".hero-logo", {
+        scale: 0.5, 
+        y: -100, 
+        opacity: 0, 
+        scrollTrigger: {
+            trigger: ".section_header100",
+            start: "top top",
+            end: "bottom top",
+            scrub: true
+        }
+    });
+
+    gsap.fromTo(".nav_logo", 
+        { opacity: 0, scale: 0.5 },
+        { opacity: 1, scale: 1, duration: 0.3 },
+        scrollTrigger: {
+            trigger: ".section_header100",
+            start: "top 10%",
+            toggleActions: "play none none reverse"
+        }
+    );
 </script>
